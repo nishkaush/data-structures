@@ -67,6 +67,18 @@ class SinglyLinkedList {
     this.length += 1;
     return this;
   }
+
+  get(ind) {
+    //gets an item based of its pseudo index
+    if (this.length === 0 || ind >= this.length || ind < 0) return undefined;
+    let flag = 0;
+    let current = this.head;
+    while (flag !== ind) {
+      current = current.next;
+      flag += 1;
+    }
+    return current.val;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -75,4 +87,4 @@ list.push("Max");
 list.push("Whats");
 list.push("Happening!");
 
-setTimeout(() => console.log(list), 1000);
+setTimeout(() => console.log(list, get), 1000);
