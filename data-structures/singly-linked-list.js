@@ -49,6 +49,16 @@ class SinglyLinkedList {
     this.length -= 1;
     return itemToPop;
   }
+
+  shift() {
+    //get this.head and save it
+    if (this.length === 0) return undefined;
+    let itemToShift = this.head.val;
+    this.head = this.head.next;
+    this.length -= 1;
+    if (this.length === 0) this.tail = null;
+    return itemToShift;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -56,8 +66,5 @@ list.push("Howdy");
 list.push("Max");
 list.push("Whats");
 list.push("Happening!");
-list.pop();
-list.pop();
-list.pop();
 
-setTimeout(() => console.log(list), 1000);
+setTimeout(() => console.log(list, shifted), 1000);
