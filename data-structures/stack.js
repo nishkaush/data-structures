@@ -40,9 +40,10 @@ class Stack {
       let nextNode = this.head.next;
       this.head = nextNode;
     }
+    currentHead.next = null;
 
     this.size -= 1;
-    return this.size;
+    return currentHead;
   }
 }
 
